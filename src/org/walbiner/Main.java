@@ -36,6 +36,9 @@ public class Main {
 
         }
         System.out.println("Combo: "+combo);
+        
+        System.out.println("Zad 3alt:");
+        System.out.println(Arrays.toString(tablica).matches(".*, 1, 2, 3,.*"));
 
 
     }
