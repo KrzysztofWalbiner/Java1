@@ -14,6 +14,7 @@ public class Main {
         System.out.println("Zad 2:");
         int sum = 0;
         int[] array = {1, 13, 2};
+        
         for (int val : array) {
             if (val == 13) {
                 break;
@@ -26,19 +27,22 @@ public class Main {
         int[] tablica = {3, 2, 14, 1, 2, 3, 6};
         int warunek = 1;
         boolean combo = false;
+        
         for (int i : tablica) {
             if (warunek == 3 && i == 3) {
                 combo = true;
-            }
-            if (i == warunek&&!combo) {
+                break;
+            } else if (i == warunek && !combo) {
                 ++warunek;
+            } else {
+                warunek = 1;
             }
-
         }
+        
         System.out.println("Combo: "+combo);
         
         System.out.println("Zad 3alt:");
-        System.out.println(Arrays.toString(tablica).matches(".*, 1, 2, 3,.*"));
+        System.out.println(Arrays.toString(tablica).matches("{(.*, )*1, 2, 3(, .*)*|}"));
 
 
     }
