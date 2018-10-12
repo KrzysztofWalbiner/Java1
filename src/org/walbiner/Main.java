@@ -1,5 +1,7 @@
 package org.walbiner;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -40,9 +42,7 @@ public class Main {
         }
         
         System.out.println("Combo: "+combo);
-        
-        System.out.println("Zad 3alt:");
-        System.out.println(Arrays.toString(tablica).matches("{(.*, )*1, 2, 3(, .*)*|}"));
+
 
 
     }
