@@ -7,13 +7,13 @@ import java.util.HashMap;
  */
 public class User {
 
-    static String domain = "example.com";
-    static HashMap<String, User> userList = new HashMap<>();
-    String name;
-    String surname;
-    String email;
-    String userName;
-    int id = 0;
+    private static String domain = "example.com";
+    private static HashMap<String, User> userList = new HashMap<>();
+    private String name;
+    private String surname;
+    private String email;
+    private String userName;
+    private int id = 0;
 
     public User(String name, String surname) {
         this.name = name;
@@ -28,6 +28,10 @@ public class User {
         userList.put(user.userName, user);
     }
 
+    public static HashMap<String, User> getUserList() {
+        return userList;
+    }
+
     private String generateNewEmail(String mailName) {
         if (id == 0) {
             if (!userList.containsKey(mailName))
@@ -37,9 +41,9 @@ public class User {
                 return generateNewEmail(mailName);
             }
         } else {
-            if (!userList.containsKey(mailName+id))
-                return mailName+id;
-            else{
+            if (!userList.containsKey(mailName + id))
+                return mailName + id;
+            else {
                 ++id;
                 return generateNewEmail(mailName);
             }
@@ -58,11 +62,11 @@ public class User {
     }
 
     public static String printUsers() {
-        if(userList.isEmpty()){
+        if (userList.isEmpty()) {
             return "Lista jest pusta!";
         }
         StringBuilder sb = new StringBuilder("----\n");
-        for(User u : userList.values()){
+        for (User u : userList.values()) {
             sb.append(u.userName);
             sb.append(" ; ");
             sb.append(u.name);
@@ -74,5 +78,17 @@ public class User {
         }
         sb.append("----");
         return sb.toString();
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getName() {
+        return name;
     }
 }
