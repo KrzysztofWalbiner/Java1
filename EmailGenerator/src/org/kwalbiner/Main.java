@@ -16,7 +16,7 @@ public class Main {
         System.out.println("p - drukuj liste");
         System.out.println("q - wyjdz");
         System.out.println("s - zapisz");
-        System.out.println("lub wpisać imię i nazwisko(np. Jan Kowalski)");
+        System.out.println("lub wpisz imię i nazwisko(np. Jan Kowalski)");
 
         while (true) {
             String input;
